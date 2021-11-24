@@ -1,21 +1,22 @@
 package main
 import (
-	"fmt"
+	_"fmt"
+	"errors"
 )
 
+func cal(number int) (err error) {
+	if number != 5 {
+		return errors.New("输入错误...")
+	} else {
+		return nil
+	}
+}
+
 func test() {
-
-	defer func() {
-		err := recover() // recover() 内置函数，可以捕获到异常
-		if err != nil {
-			fmt.Println("err=", err)
-		}
-	}()
-
-	n1 := 5
-	n2 := 0
-	res := n1 / n2
-	fmt.Println("res=", res)
+	err := cal(10)
+	if err != nil {
+		panic(err)
+	}
 
 }
 
