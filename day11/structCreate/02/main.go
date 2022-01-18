@@ -17,8 +17,8 @@ func main() {
 
 	// 方式二/2
 	p2 := Person{
-		"harry",
-		30,
+		Name: "harry",
+		Age:  30,
 	}
 	fmt.Println(p2)
 
