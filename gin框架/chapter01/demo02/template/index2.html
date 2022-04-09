@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div>数组结构体渲染</div>
+<p>方式一：</p>
+{{range .}} <!-- 这里的点表示的就是后端传递过来的上下文数组 -->
+{{.Id}}
+{{.Name}}
+{{.Age}} <!-- 这里的点表示的就是每一个循环的结构体 -->
+{{end}}
+<p>方式2：</p>
+{{range $i, $v := .}}
+    {{$v.Id}}
+    {{$v.Name}}
+    {{$v.Age}} <br>
+{{end}}
+</body>
+</html>
