@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="/static/js/jquery-3.6.0.js"></script>
+</head>
+<body>
+<form>
+    <input type="file" id="file">
+    <input type="button" value="提交" id="btn_submit">
+</form>
+<script>
+    var btn_submit = document.getElementById("btn_submit")
+    btn_submit.onclick = function (ev) {
+        var file = $("#file")[0].files[0];
+        var form_data = new FormData();
+        form_data.append("file", file);
+        
+        $.ajax({
+            url: "/post_upload",
+            type: "POST",
+            data: form_data,
+            contentType: false,
+            processData: false,
+            success: function (data) {
+                // 响应回来的json数据
+            },
+            fail: function (data) {
+                
+            }
+            
+        })
+    }
+    
+    
+</script>
+</body>
+</html>
