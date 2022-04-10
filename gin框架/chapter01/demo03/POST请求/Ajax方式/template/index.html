@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="/static/js/jquery-3.6.0.js"></script>
+</head>
+<body>
+
+<form>
+    <p>用户名：<input id="username" type="text"></p>
+    <p>密码：<input id="password" type="password"></p>
+    <p><input type="button" value="提交" id="btn_submit"></p>
+</form>
+
+<script>
+    var btn = document.getElementById("btn_submit")
+    btn.onclick = function (ev) {
+        var username = document.getElementById("username").value
+        var password = document.getElementById("password").value
+
+        $.ajax({
+            url: '/post_index',
+            type: 'POST',
+            data: {
+                username: username,
+                password: password
+            },
+            success: function (data) {
+                alert(data) // 响应成功的回调函数
+            },
+            fail: function (data) {
+
+            }
+        })
+    }
+
+
+</script>
+</body>
+</html>
