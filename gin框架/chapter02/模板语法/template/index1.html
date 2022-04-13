@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+{{/*if...else...*/}}
+{{if .name}}
+    <p>name存在：{{$.name}}</p>
+{{else}}
+    <p>name不存在</p>
+{{end}}
+<br>
+{{/*if嵌套*/}}
+{{if .name}}
+    {{if eq $.name "lily"}}
+        <p>name正确：{{$.name}}</p>
+    {{else}}
+        <p>name不正确</p>
+    {{end}}
+{{else}}
+    <p>name不存在</p>
+{{end}}
+
+</body>
+</html>

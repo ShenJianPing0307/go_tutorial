@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+{{.}}   {{/*这里的 . 表示后台的传递的map_data变量数据*/}}
+{{range $i, $v := .arr_num}} {{/*这里的 .arr_num 表示后台的传递的map_data.arr_num变量数据*/}}
+    {{$v}} {{/*$i, $v作用域是在数组的范围内，表示的是循环的每一个值，但是如果*/}}
+    {{$.name}} {{/*如果想在循环内使用map_data的name数据，就需要使用 $. 了，表示map_data.name*/}}
+{{end}}
+
+{{ $age := 18 }}
+{{ $age }}
+
+</body>
+</html>

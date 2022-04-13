@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+{{/*方法一*/}}
+{{range $i, $v := .arr_num}}
+    {{$v}}
+{{end}}
+
+{{/*方法二*/}}
+{{range .arr_num }}
+    {{.}} {{/*表示的是每一个循环值*/}}
+{{end}}
+
+{{/*range...else...*/}}
+{{range .arr_num}}
+        {{.}}
+    {{else}}
+        {{0}} {{/*当.arr_num长度为0时，执行else*/}}
+{{end}}
+
+</body>
+</html>
