@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+{{/*一般方式*/}}
+{{.user_data.Name}}
+{{.user_data.Age}}
+<br>
+
+{{/*with方式*/}}
+{{with .user_data}}
+    {{.Name}}
+    {{.Age}}
+{{end}}
+
+<br>
+{{/*with else方式*/}}
+{{with .user_data}}
+        {{.Name}}
+        {{.Age}}
+    {{else}}
+        <p>无数据</p>
+{{end}}
+
+</body>
+</html>
