@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+{{. | printf "%s"}}
+<br>
+{{printf "My Name is %s" (printf "%s" .)}}
+
+</body>
+</html>
